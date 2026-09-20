@@ -11,7 +11,7 @@ Playlist(
       VideoItem(
         id: "ZKYTOO5S4Qk",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 1: Episode 1 - The Legend of the Golden Witch.",
-        duration: None,
+        duration: Some(3248),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/ZKYTOO5S4Qk/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCu7fCGHjPY_Cusw1huEoUgPDLKGQ",
@@ -52,7 +52,7 @@ Playlist(
       VideoItem(
         id: "kjtU3yQGTxE",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 2: Прибытие в аэропорт Нииджимы. Уширомия Джессика",
-        duration: None,
+        duration: Some(1101),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/kjtU3yQGTxE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCC6GL4GlXHIDhQ9LY9SyZzFNZRkg",
@@ -93,7 +93,7 @@ Playlist(
       VideoItem(
         id: "CaKaOvJhUPc",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 3: Переправа на Роккенджиму на катере. Тори исчезла",
-        duration: None,
+        duration: Some(1845),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/CaKaOvJhUPc/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAJGZWLTdNFqEzMxPuY2WgjodftGA",
@@ -134,7 +134,7 @@ Playlist(
       VideoItem(
         id: "cZt6cqHjoxI",
         name: "Umineko no Naku Koro ni - Playthrough. Part 4: Conversation in the Rose Garden. The Asocial Serva...",
-        duration: None,
+        duration: Some(2057),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/cZt6cqHjoxI/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDKgj_dP24jcPBP2bawf-kxcTpanA",
@@ -175,7 +175,7 @@ Playlist(
       VideoItem(
         id: "TyKpbQdObhM",
         name: "Umineko When They Cry - Playthrough. Part 5: Room Assignments. Natsuhi Ushiromiya. Tea Party",
-        duration: None,
+        duration: Some(2112),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/TyKpbQdObhM/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDKSBzYN0axM7_z5Qo1lXj_IJ1VjA",
@@ -216,7 +216,7 @@ Playlist(
       VideoItem(
         id: "HgMDjYNZXqU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 6: Грудь Марии и Батлер. Таинственная картина",
-        duration: None,
+        duration: Some(1535),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/HgMDjYNZXqU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDqgjiX0UnVKHLig5c8EzKS_mRWZQ",
@@ -257,7 +257,7 @@ Playlist(
       VideoItem(
         id: "xB5qIA64PhI",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 7: The Rampage of Ushiromiya Kinzo. Grandpa\'s Charact...",
-        duration: None,
+        duration: Some(2207),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/xB5qIA64PhI/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDmW-Gv_I4DLo5UJM8U_B1uOmKEZA",
@@ -298,7 +298,7 @@ Playlist(
       VideoItem(
         id: "V_zZryh9VVo",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 8: Вкусная трапеза. История создания компании Кинзо",
-        duration: None,
+        duration: Some(2467),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/V_zZryh9VVo/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDruSwHcgqKWgcoe8b8UuG5jeMGdA",
@@ -339,7 +339,7 @@ Playlist(
       VideoItem(
         id: "P_HEGDyyyjk",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 9: Делёж состояния семьи Уширомия. Нацухи в слезах",
-        duration: None,
+        duration: Some(2282),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/P_HEGDyyyjk/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCmq1c5WsII2lk_Q--Raxc6zr_iww",
@@ -380,7 +380,7 @@ Playlist(
       VideoItem(
         id: "A807_7jxSOI",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 10: Беатриче следит за разговором молодёжи",
-        duration: None,
+        duration: Some(1652),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/A807_7jxSOI/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBne-1HcJdDaaqFsqSIGf8wz47fJw",
@@ -421,7 +421,7 @@ Playlist(
       VideoItem(
         id: "lPPLLtjv8hU",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 11: The Witch\'s Gold Turns Loved Ones into Enemies. K...",
-        duration: None,
+        duration: Some(2489),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/lPPLLtjv8hU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDwc5mwOv8sB6vpSmP_HowVXLGfpg",
@@ -462,7 +462,7 @@ Playlist(
       VideoItem(
         id: "hjOzRs4Wnyg",
         name: "Umineko no Naku Koro ni - Playthrough. Part 12: Kinzo offers Kanon participation. The portrait\'s ...",
-        duration: None,
+        duration: Some(911),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/hjOzRs4Wnyg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCLWXvlZ-MCsJnerbYZxBMuuLlfiA",
@@ -503,7 +503,7 @@ Playlist(
       VideoItem(
         id: "tI6KxBTPXcE",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 13: Первая попытка разгадки эпитафии. Роза Марии",
-        duration: None,
+        duration: Some(2883),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/tI6KxBTPXcE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCJkAITJTkTuPvDid1THaM0k3yAew",
@@ -544,7 +544,7 @@ Playlist(
       VideoItem(
         id: "yHhODRc0hoo",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 14: Ритуал начинается. Беатриче дарит Марии зонтик",
-        duration: None,
+        duration: Some(3580),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/yHhODRc0hoo/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAH9rmvDdwTXSrdwYTxwk32vo9tWw",
@@ -585,7 +585,7 @@ Playlist(
       VideoItem(
         id: "raaN1CTw3dM",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 15: Мария зачитывает послание семье от Беатриче",
-        duration: None,
+        duration: Some(2704),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/raaN1CTw3dM/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLArgUxL_yHYnt5DK2_GaztqzlfVPA",
@@ -626,7 +626,7 @@ Playlist(
       VideoItem(
         id: "AfAmQ58H6U0",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 16: Золото ведьмы шокирует Нацухи. Талисман от Джессики",
-        duration: None,
+        duration: Some(2461),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/AfAmQ58H6U0/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDYtBbBtMrJlCRsaSOgJUCZz6EnVw",
@@ -667,7 +667,7 @@ Playlist(
       VideoItem(
         id: "CTgSt97Apkc",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 17: Свидание Джорджа и Шаннон (Саё)",
-        duration: None,
+        duration: Some(1150),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/CTgSt97Apkc/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLABqHDuviO7vOseRhM9zB-UgHjY1Q",
@@ -708,7 +708,7 @@ Playlist(
       VideoItem(
         id: "NjTgTfqUGMk",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 18: Внезапное исчезновение людей. Кинзо выбирает Нацухи",
-        duration: None,
+        duration: Some(3031),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/NjTgTfqUGMk/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBKbfnniBJdt-epPXFErVpdvHW7VQ",
@@ -749,7 +749,7 @@ Playlist(
       VideoItem(
         id: "N1-reIPw_bY",
         name: "Umineko When They Cry - Playthrough Part 19: Sacrifices Chosen by the Key. The Mysterious Bloody ...",
-        duration: None,
+        duration: Some(1981),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/N1-reIPw_bY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCkWycoIS9ylfutttGhGdBEuGVZ6A",
@@ -790,7 +790,7 @@ Playlist(
       VideoItem(
         id: "sA9OjMKQaZg",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 20: Безучастность Марии. Кровь в обеденном зале",
-        duration: None,
+        duration: Some(3522),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/sA9OjMKQaZg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDb3RstAh26Pze8lhVXi1gPokm9wQ",
@@ -831,7 +831,7 @@ Playlist(
       VideoItem(
         id: "kznALgvOmeA",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 21: Мария объясняет странный символ. Нацухи с ружьем",
-        duration: None,
+        duration: Some(1756),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/kznALgvOmeA/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD8HcXecBM8sVSADNrVVxbycYssqw",
@@ -872,7 +872,7 @@ Playlist(
       VideoItem(
         id: "PzE60CftxCE",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 22: На кухне со слугами. Мария про длину волны Батлера",
-        duration: None,
+        duration: Some(3429),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/PzE60CftxCE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLApwKK9TC8a_ICDjC0Cc3e5g3NDhA",
@@ -913,7 +913,7 @@ Playlist(
       VideoItem(
         id: "rcKiz3m7b-o",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 23: Как вышел Кинзо? Замес между Евой и Нацухи",
-        duration: None,
+        duration: Some(2358),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/rcKiz3m7b-o/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCWhZuvWvNWtreR2nv8HMSzzu5bwg",
@@ -954,7 +954,7 @@ Playlist(
       VideoItem(
         id: "9vLgb04-C6k",
         name: "Umineko no Naku Koro ni - Walkthrough Part 24: The Witch Who Cannot Be Seen. Everyone Disperses A...",
-        duration: None,
+        duration: Some(1392),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/9vLgb04-C6k/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCJQrSkJcdQxfq2b_xbl5enx0BV2Q",
@@ -995,7 +995,7 @@ Playlist(
       VideoItem(
         id: "xJl2sjIW0fg",
         name: "Umineko no Naku Koro ni - Прохождение Часть 25: Любовь Евы и Хидэёши. Второй конверт и символ",
-        duration: None,
+        duration: Some(2151),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/xJl2sjIW0fg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBaJb66cvhskmpiTDgThHrffL0pqg",
@@ -1036,7 +1036,7 @@ Playlist(
       VideoItem(
         id: "qndytyUhDGU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 26: Канон бросает вызов Беатриче. Обгоревший шестипалый",
-        duration: None,
+        duration: Some(2661),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/qndytyUhDGU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBNTRHmqdsp0D20p8njC02N5yqRXg",
@@ -1077,7 +1077,7 @@ Playlist(
       VideoItem(
         id: "AUHHWKCczjE",
         name: "Umineko no Naku Koro ni - Прохождение Часть 27: Истерика Джессики. Талисман Скорпиона спасает Нацухи",
-        duration: None,
+        duration: Some(2206),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/AUHHWKCczjE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBdqYA72K5o5zGCCRyD5d3gjUPNGQ",
@@ -1118,7 +1118,7 @@ Playlist(
       VideoItem(
         id: "KLlc2C-gtR8",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 28: Beatrice sows discord in Kinzo\'s office",
-        duration: None,
+        duration: Some(3547),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/KLlc2C-gtR8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLC4QP9toBFqP58i3Cyamb8Mh5jDHQ",
@@ -1159,7 +1159,7 @@ Playlist(
       VideoItem(
         id: "k4LCwe9VmYM",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 29: Maria\'s Song. Episode 1 Finale",
-        duration: None,
+        duration: Some(3873),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/k4LCwe9VmYM/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDlsEJJirpnikI9HkRliwNSyTzlAw",
@@ -1200,7 +1200,7 @@ Playlist(
       VideoItem(
         id: "ZUxeGNIS_2s",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 30: Чаепитие первого эпизода",
-        duration: None,
+        duration: Some(3237),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/ZUxeGNIS_2s/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCChYFG8z6fEGu11iw9SuOSJNBXvQ",
@@ -1241,7 +1241,7 @@ Playlist(
       VideoItem(
         id: "PWpcII-cZo8",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 31: ??? и Омаке первого эпизода",
-        duration: None,
+        duration: Some(1543),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/PWpcII-cZo8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD_oAEPU-6xH2FjhfVXV7Yw5789TQ",
@@ -1282,7 +1282,7 @@ Playlist(
       VideoItem(
         id: "a_YA7cQAgWE",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 32: Эпизод 2 - Дебют Золотой Ведьмы",
-        duration: None,
+        duration: Some(5088),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/a_YA7cQAgWE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCgO1KxMfXuYlH2bew91oiCV0QNVw",
@@ -1323,7 +1323,7 @@ Playlist(
       VideoItem(
         id: "n3YKrc5ah3k",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 33: Беатриче предлагает Шаннон договор. Гнев Канона",
-        duration: None,
+        duration: Some(2362),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/n3YKrc5ah3k/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBebo-FPyL3F0yB0P6nJnm_elZSIg",
@@ -1364,7 +1364,7 @@ Playlist(
       VideoItem(
         id: "YaBFlG2JtzA",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 34: Джессика хочет парня. Ведьма исполнила желание",
-        duration: None,
+        duration: Some(1419),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/YaBFlG2JtzA/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLChvirMLInUB26Q2wkIsVPgeTeSVg",
@@ -1405,7 +1405,7 @@ Playlist(
       VideoItem(
         id: "sjjwMV4uUMU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 35: Мебель хочет стать людьми?",
-        duration: None,
+        duration: Some(1555),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/sjjwMV4uUMU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLABrAiwpBxpzYT4I2opBzNfssp3Iw",
@@ -1446,7 +1446,7 @@ Playlist(
       VideoItem(
         id: "u5VVAFjyAKs",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 36: Выступление Джессики на школьном фестивале",
-        duration: None,
+        duration: Some(4387),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/u5VVAFjyAKs/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDYKk_Tty0qvOVjcQ5RledIIhFAxw",
@@ -1487,7 +1487,7 @@ Playlist(
       VideoItem(
         id: "-qIVOZ8GMlY",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 37: Трудный ребёнок. Джордж делает предложение Шаннон",
-        duration: None,
+        duration: Some(4841),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/-qIVOZ8GMlY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB_fW2uYRQfmtCyug9OjNglEzl9bw",
@@ -1528,7 +1528,7 @@ Playlist(
       VideoItem(
         id: "jUpC9fXVKgE",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 38: Восстановленная ведьмой конфета. Мебель всё знает",
-        duration: None,
+        duration: Some(3170),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/jUpC9fXVKgE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBxtbEVQTQV2r6JaIFPSf7-WWOKVQ",
@@ -1569,7 +1569,7 @@ Playlist(
       VideoItem(
         id: "PXXDwRVwwmU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 39: Беатриче унижает Канона. Девятнадцатый человек был",
-        duration: None,
+        duration: Some(3560),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/PXXDwRVwwmU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDehdxEPii2aiE_oGTWg1u4nWQBxw",
@@ -1610,7 +1610,7 @@ Playlist(
       VideoItem(
         id: "UbGlWhvlobE",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 40: Мебель и люди. Джордж выбрал спутницу жизни",
-        duration: None,
+        duration: Some(4635),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/UbGlWhvlobE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDYkJAQMQrrazPovIPh8z1KIMAJhw",
@@ -1651,7 +1651,7 @@ Playlist(
       VideoItem(
         id: "dANZtU8uHZU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 41: 4 октября - день Роккенджимы",
-        duration: None,
+        duration: Some(3124),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/dANZtU8uHZU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCd72iBQmxELQOzAVDnknzSLhZUEg",
@@ -1692,7 +1692,7 @@ Playlist(
       VideoItem(
         id: "PVgm_SAycbQ",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 42: Хэллоуин в Часовне",
-        duration: None,
+        duration: Some(3852),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/PVgm_SAycbQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAl9UdCD5b1ZTQh7Mr5t4Ad-MMwuA",
@@ -1733,7 +1733,7 @@ Playlist(
       VideoItem(
         id: "1uu8RB5cLQs",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 43: Мебель Беатриче. Канон сражается за Джессику",
-        duration: None,
+        duration: Some(3571),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/1uu8RB5cLQs/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLATQk91S6nm8-8lOeBftkKLAxkDGw",
@@ -1774,7 +1774,7 @@ Playlist(
       VideoItem(
         id: "YXZgRxQKGlY",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 44: Новое правило. Беатриче будет говорить красным",
-        duration: None,
+        duration: Some(3532),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/YXZgRxQKGlY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCrTJq8CBjHYSDhlq4XuiExvg3kew",
@@ -1815,7 +1815,7 @@ Playlist(
       VideoItem(
         id: "PkYDNaCufbs",
         name: "Umineko no Naku Koro ni - Walkthrough. Chapter 45: Rose Arms Herself. Gold Bars. Kanon Is Innocent!",
-        duration: None,
+        duration: Some(4969),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/PkYDNaCufbs/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDQBG4MVEvcTV9ud2Avr1pB2amOkA",
@@ -1856,7 +1856,7 @@ Playlist(
       VideoItem(
         id: "TFvmQbxHHcg",
         name: "Umineko no Naku Koro ni - Walkthrough. Chapter 46: Of Sheep and Wolves. Scratched Kanon Slashes O...",
-        duration: None,
+        duration: Some(3887),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/TFvmQbxHHcg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDCNHGww7KWXNi9C12OspCoqshBmQ",
@@ -1897,7 +1897,7 @@ Playlist(
       VideoItem(
         id: "IoYIde0yAaM",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 47: Таинственное исчезновение тел Нанджо и Кумасавы",
-        duration: None,
+        duration: Some(2345),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/IoYIde0yAaM/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDdEM0QsN54cZQZl5BvEgcy1iIwqw",
@@ -1938,7 +1938,7 @@ Playlist(
       VideoItem(
         id: "0s0A2BbCkkE",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 48: Роза ранит Шаннон. Баттлер поверил в ведьму",
-        duration: None,
+        duration: Some(1661),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/0s0A2BbCkkE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDMNo_5HywXQ6Uhrbg7sBs62sd5TQ",
@@ -1979,7 +1979,7 @@ Playlist(
       VideoItem(
         id: "9I3x7Mrxsn4",
         name: "Umineko no Naku Koro ni - Walkthrough Part 49: The Three Infiltrate the Chapel. Shannon Fights th...",
-        duration: None,
+        duration: Some(4474),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/9I3x7Mrxsn4/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBCPbQ2Q2Gg6C3gbgpfKpeXqR0tvA",
@@ -2020,7 +2020,7 @@ Playlist(
       VideoItem(
         id: "43KSDJIqqHg",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 50: Surrender. Genji finds two",
-        duration: None,
+        duration: Some(2918),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/43KSDJIqqHg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLC4O-ZiP4BJzpcd9-iXY1OJAMcfEw",
@@ -2061,7 +2061,7 @@ Playlist(
       VideoItem(
         id: "T6pyXBKJYuc",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 51: At Beatrice\'s Ball. Episode 2 Finale",
-        duration: None,
+        duration: Some(3339),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/T6pyXBKJYuc/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBL-lPmtX9tFPcUs-E2CanAQTi3bQ",
@@ -2102,7 +2102,7 @@ Playlist(
       VideoItem(
         id: "JHHXoBJxnJk",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 52: Чаепитие второго эпизода",
-        duration: None,
+        duration: Some(2807),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/JHHXoBJxnJk/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCTm1ub_YE6Ig0FFEBhRy67vgHn5g",
@@ -2143,7 +2143,7 @@ Playlist(
       VideoItem(
         id: "XpwdZJw1h9o",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 53: ??? второго эпизода",
-        duration: None,
+        duration: Some(2560),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/XpwdZJw1h9o/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLC4FE5MKKLtt2Uqrh0FgNhVvhSjQA",
@@ -2184,7 +2184,7 @@ Playlist(
       VideoItem(
         id: "NhIgmrDyKsw",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 54: Омаке второго эпизода",
-        duration: None,
+        duration: Some(634),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/NhIgmrDyKsw/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD_cyIHMlwzHDh4_BkCFirUftcMdA",
@@ -2225,7 +2225,7 @@ Playlist(
       VideoItem(
         id: "C39_e00eUHo",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 55: Эпизод 3 - Пир Золотой Ведьмы",
-        duration: None,
+        duration: Some(3462),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/C39_e00eUHo/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAnYM4NoKhGeQWsoGLadizKsj128A",
@@ -2266,7 +2266,7 @@ Playlist(
       VideoItem(
         id: "NThXWEgrsts",
         name: "Umineko no Naku Koro ni - Прохождение Часть 56: Дни девичества и маленькая девочка, что живёт внутри",
-        duration: None,
+        duration: Some(1958),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/NThXWEgrsts/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLApUGXkoHO0H7DI7xm69sqU200_xg",
@@ -2307,7 +2307,7 @@ Playlist(
       VideoItem(
         id: "_uS95fhB2Zg",
         name: "Umineko When They Cry - Playthrough. Part 57: My preparations are complete. Property squabble",
-        duration: None,
+        duration: Some(7145),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/_uS95fhB2Zg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAXpsulDqizKAhVHxVPU_cN9jfWdQ",
@@ -2348,7 +2348,7 @@ Playlist(
       VideoItem(
         id: "tU1fYWObXJU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 58: Существует ли 19-й человек? Пресная победа Баттлера",
-        duration: None,
+        duration: Some(3279),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/tU1fYWObXJU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDSgQDhZ4Rp29SULnYdwdFM-HZHwA",
@@ -2389,7 +2389,7 @@ Playlist(
       VideoItem(
         id: "oiXt51BLc_Y",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 59: Юная Беатриче в заточении у Кинзо",
-        duration: None,
+        duration: Some(2540),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/oiXt51BLc_Y/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCkFZ7MqJz3GnJijLFbJWgi0xXr1g",
@@ -2430,7 +2430,7 @@ Playlist(
       VideoItem(
         id: "uy_pAiYIbDY",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 60: Как Роза Беатриче убила",
-        duration: None,
+        duration: Some(2987),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/uy_pAiYIbDY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAZ60XZe62xswD3wTH5J2f5RRn3WQ",
@@ -2471,7 +2471,7 @@ Playlist(
       VideoItem(
         id: "mO6PvljKv_Q",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 61: Плохая совместимость восточной и западной магии",
-        duration: None,
+        duration: Some(1610),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/mO6PvljKv_Q/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB5i6j1eg2ANu679Kn_rpkZNuCvUg",
@@ -2512,7 +2512,7 @@ Playlist(
       VideoItem(
         id: "uORt1x6jlyw",
         name: "Umineko no Naku Koro ni - Playthrough. Part 62: Kinzo’s Burning. Kanon’s Battle with Lucifer",
-        duration: None,
+        duration: Some(3286),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/uORt1x6jlyw/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDk9x7mltcHyO5589GLIeVi9F_PUQ",
@@ -2553,7 +2553,7 @@ Playlist(
       VideoItem(
         id: "2tQmnlLuP6A",
         name: "Umineko no Naku Koro ni - Прохождение Часть 63: Года трусит. Беатриче сражается со своей наставницей",
-        duration: None,
+        duration: Some(3182),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/2tQmnlLuP6A/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLA0STsLR8FTBlsZ8KcxUI3Q20ZVEQ",
@@ -2594,7 +2594,7 @@ Playlist(
       VideoItem(
         id: "9nmbhaH6mKU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 64: Слуги исчезли",
-        duration: None,
+        duration: Some(1720),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/9nmbhaH6mKU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLADkVdMYSsPIJpx0tDeEkccLgUJUw",
@@ -2635,7 +2635,7 @@ Playlist(
       VideoItem(
         id: "L1fuMskDULc",
         name: "Umineko no Naku Koro ni - Прохождение Часть 65: Беседа об электронно-лучевой трубке. Беатриче пасует",
-        duration: None,
+        duration: Some(6952),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/L1fuMskDULc/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBZgyetmpaPAcX1RKXOEyEcF_8R8Q",
@@ -2676,7 +2676,7 @@ Playlist(
       VideoItem(
         id: "4P6dW8ZZHNU",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 66: Ева разгадывает эпитафию и становится Ведьмой",
-        duration: None,
+        duration: Some(4408),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/4P6dW8ZZHNU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLACUYoqg6qr-YtMlpWCEm-krEbpWg",
@@ -2717,7 +2717,7 @@ Playlist(
       VideoItem(
         id: "IB7ZMKm2Yp8",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 67: Ева Беатриче издевается над сестрой",
-        duration: None,
+        duration: Some(4450),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/IB7ZMKm2Yp8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLByRqaQ44t3SEUe3QkcSMTWcOJexw",
@@ -2758,7 +2758,7 @@ Playlist(
       VideoItem(
         id: "ctUII4_kn1U",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 68: Баттлер выгоняет Беатриче. Ева спорит с ведьмой",
-        duration: None,
+        duration: Some(4096),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/ctUII4_kn1U/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD7Is3HR862ZlyUs4hMYJn_xoMo-g",
@@ -2799,7 +2799,7 @@ Playlist(
       VideoItem(
         id: "Tg5_jCn7Dgw",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 69: Бой Рудольфа и Кирие с Левиафаном и Вельфигором",
-        duration: None,
+        duration: Some(5769),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/Tg5_jCn7Dgw/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAn3bz7O8QfRH6a_7z7jDGP-b2Zxw",
@@ -2840,7 +2840,7 @@ Playlist(
       VideoItem(
         id: "QpCHO7X2JIg",
         name: "Umineko no Naku Koro ni - Playthrough. Part 70: George will do anything to resurrect Shannon",
-        duration: None,
+        duration: Some(4346),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/QpCHO7X2JIg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBDKHMLeSq8mkHMoif06stRrzKNOw",
@@ -2881,7 +2881,7 @@ Playlist(
       VideoItem(
         id: "eaR2L43kM1E",
         name: "Umineko no Naku Koro ni - Playthrough. Part 71: George\'s Power of Love",
-        duration: None,
+        duration: Some(3673),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/eaR2L43kM1E/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAOFR2uJPbwlgBd1ydyIeOSBVc42Q",
@@ -2922,7 +2922,7 @@ Playlist(
       VideoItem(
         id: "EeBCti5MRps",
         name: "Umineko When They Cry - Walkthrough. Part 72: The Witch\'s Courtroom. Jessica and Kanon\'s Love",
-        duration: None,
+        duration: Some(4343),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/EeBCti5MRps/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAKlTAWJnTOD6hoOCUB2z_7QdX33Q",
@@ -2963,7 +2963,7 @@ Playlist(
       VideoItem(
         id: "4mA5xlbl4lM",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 73: Сердце ведьмы. Батлер бросает вызов Еве-ведьме",
-        duration: None,
+        duration: Some(2133),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/4mA5xlbl4lM/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB_udhZEdQHhBrjP5x5DxxRECIRjw",
@@ -3004,7 +3004,7 @@ Playlist(
       VideoItem(
         id: "Zw8tLr2fXFE",
         name: "Umineko When They Cry - Playthrough. Part 74: Battler in the Red Web. Episode 3 Finale",
-        duration: None,
+        duration: Some(5518),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/Zw8tLr2fXFE/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAwy13duRdD--2qunurhrXd4MfLbQ",
@@ -3045,7 +3045,7 @@ Playlist(
       VideoItem(
         id: "qvK4ZXQdDok",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 75: Чаепитие третьего эпизода",
-        duration: None,
+        duration: Some(1126),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/qvK4ZXQdDok/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAb3_cIqyCPpMXQR9mOGF24MRd7oA",
@@ -3086,7 +3086,7 @@ Playlist(
       VideoItem(
         id: "OG97gk8eba4",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 76: ??? and Episode 3 Omake",
-        duration: None,
+        duration: Some(4565),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/OG97gk8eba4/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDGQOt33-W9JA3Oly4B3k6f0PINzA",
@@ -3127,7 +3127,7 @@ Playlist(
       VideoItem(
         id: "mDfqklNu1cY",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 77: Эпизод 4 - Альянс Золотой Ведьмы. Новая гостья",
-        duration: None,
+        duration: Some(2610),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/mDfqklNu1cY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCsQYKV5ErDi8OM1UBjaw8C1xeAgg",
@@ -3168,7 +3168,7 @@ Playlist(
       VideoItem(
         id: "qWdoacGOPPU",
         name: "Umineko no Naku Koro ni - Walkthrough. Chapter 78: Angie\'s New Friend. Maria\'s Birthday. Sakutaro",
-        duration: None,
+        duration: Some(4305),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/qWdoacGOPPU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAYtsoDny1l5IRVsfzHbwN_4MLx4A",
@@ -3209,7 +3209,7 @@ Playlist(
       VideoItem(
         id: "xU9xSdBc1Sg",
         name: "Umineko no Naku Koro ni - Walkthrough. Chapter 79: Future, 12 Years Later. Chasing Angie. Amakusa",
-        duration: None,
+        duration: Some(3747),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/xU9xSdBc1Sg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLB5Wxy9-GxV1FP7-zEfnM9RmkxMEg",
@@ -3250,7 +3250,7 @@ Playlist(
       VideoItem(
         id: "uVjkhTnNLrk",
         name: "Umineko no Naku Koro ni - Walkthrough Part 80: Red Truth, Blue Truth. Kinzo Sneers at Krauss",
-        duration: None,
+        duration: Some(3746),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/uVjkhTnNLrk/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD49zrdchSw6i_CZaXW_zhA-OPuhA",
@@ -3291,7 +3291,7 @@ Playlist(
       VideoItem(
         id: "mNKamD8_XuI",
         name: "Umineko no Naku Koro ni - Playthrough. Part 81: Ange\'s Memory. Maria Creates Sakutaro",
-        duration: None,
+        duration: Some(4551),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/mNKamD8_XuI/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCg1Xhs6t_EsDfvbYumXp7FlWDRsg",
@@ -3332,7 +3332,7 @@ Playlist(
       VideoItem(
         id: "fO2ulSzkK9g",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 82: Меридж Сорсьер. Профессор Ооцуки. Энджи-призыватель",
-        duration: None,
+        duration: Some(7931),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/fO2ulSzkK9g/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBEX_sD5YPEp10uxy56LvOIrKmZyw",
@@ -3373,7 +3373,7 @@ Playlist(
       VideoItem(
         id: "2WPd5vIIz5I",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 83: Мой мир. Травля Энджи",
-        duration: None,
+        duration: Some(3996),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/2WPd5vIIz5I/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDk-eWk8TMp3013hYwIM-kyPYt5Zg",
@@ -3414,7 +3414,7 @@ Playlist(
       VideoItem(
         id: "sCYshkTBwxA",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 84: Тяжелое детство Марии. Чудовище Роза",
-        duration: None,
+        duration: Some(3164),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/sCYshkTBwxA/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBOdwxoHiJsiL1Xw9OEELp3bDHJbw",
@@ -3455,7 +3455,7 @@ Playlist(
       VideoItem(
         id: "I-vvkO0imp0",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 85: To the Witch\'s Island",
-        duration: None,
+        duration: Some(3214),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/I-vvkO0imp0/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDmmDxnN3ugh9oBl_23BoV9SBpjFg",
@@ -3496,7 +3496,7 @@ Playlist(
       VideoItem(
         id: "xm_vLrhTJCs",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 86: Уширомия Кинзо приносит в жертву своих детей. Гаап",
-        duration: None,
+        duration: Some(6206),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/xm_vLrhTJCs/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBYvbk-6JYJ3vVaqFUL7lzNNZiWyw",
@@ -3537,7 +3537,7 @@ Playlist(
       VideoItem(
         id: "YeU8F90VUbg",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 87: Милый мир ведьм. Мария мстит своей матери",
-        duration: None,
+        duration: Some(2952),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/YeU8F90VUbg/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBIkdHD9170cWwkGHX_9F5QAeH65A",
@@ -3578,7 +3578,7 @@ Playlist(
       VideoItem(
         id: "McMNxavwYmY",
         name: "Umineko no Naku Koro ni - Walkthrough. Chapter 88: Behind Bars in the Dungeon",
-        duration: None,
+        duration: Some(3359),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/McMNxavwYmY/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAuPF2nSNl_iN0AtOYyjJ0hci-e7Q",
@@ -3619,7 +3619,7 @@ Playlist(
       VideoItem(
         id: "QbW5c0GPCAQ",
         name: "Umineko no Naku Koro ni - Walkthrough. Chapter 89: Kinzo Visits the Captives in the Dungeon",
-        duration: None,
+        duration: Some(1832),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/QbW5c0GPCAQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBgzNpbibB55u5UBRwl4KuYJnng5w",
@@ -3660,7 +3660,7 @@ Playlist(
       VideoItem(
         id: "CaWcUUgwI3o",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 90: Моя миссия. Подарки от ведьмы родственникам убитых",
-        duration: None,
+        duration: Some(3280),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/CaWcUUgwI3o/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDpy8Eui2pPXxGezCch27rsfgEwLQ",
@@ -3701,7 +3701,7 @@ Playlist(
       VideoItem(
         id: "Z1rJ4ukHmu8",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 91: Последнее собрание семьи",
-        duration: None,
+        duration: Some(2175),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/Z1rJ4ukHmu8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLD24nCnZ1X2S_Ga1Q_35LdDeM9mUw",
@@ -3742,7 +3742,7 @@ Playlist(
       VideoItem(
         id: "nFCdsX79RQQ",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 92: Следующий глава",
-        duration: None,
+        duration: Some(9167),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/nFCdsX79RQQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBT94IhdrVCJNnkAb_iSlmG30bVbg",
@@ -3783,7 +3783,7 @@ Playlist(
       VideoItem(
         id: "2wQfllIk7eU",
         name: "Umineko When They Cry - Playthrough. Part 93: The Cause of the Tragedy. Drunken Beatrice. Battler...",
-        duration: None,
+        duration: Some(5473),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/2wQfllIk7eU/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDAMccjfa6P2TCFMJOuIcxbPIBRRg",
@@ -3824,7 +3824,7 @@ Playlist(
       VideoItem(
         id: "9yDZT_3F10I",
         name: "Umineko no Naku Koro ni - Playthrough. Part 94: The Final Destination",
-        duration: None,
+        duration: Some(4375),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/9yDZT_3F10I/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLDKLakiZ0oa3GRgCypy1SOkciJoEA",
@@ -3865,7 +3865,7 @@ Playlist(
       VideoItem(
         id: "FRPRSqHvq5M",
         name: "Umineko no Naku Koro ni - Walkthrough. Part 95: To Battle! Angie\'s True Magic. Episode 4 Finale",
-        duration: None,
+        duration: Some(4956),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/FRPRSqHvq5M/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCkjcUtn3VmYFEpNUtFoOiid8fxvA",
@@ -3906,7 +3906,7 @@ Playlist(
       VideoItem(
         id: "vkbnzjcwchQ",
         name: "Umineko no Naku Koro ni - Playthrough. Part 96: Episode 4 Tea Party",
-        duration: None,
+        duration: Some(7177),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/vkbnzjcwchQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBEpxfijYKnAeN8MpI5-3WQKs6iZQ",
@@ -3947,7 +3947,7 @@ Playlist(
       VideoItem(
         id: "pRbV9UZbnaM",
         name: "Umineko no Naku Koro ni - Playthrough. Part 97: Episode 4 ???",
-        duration: None,
+        duration: Some(1470),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/pRbV9UZbnaM/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLBR5p7DuWw7a3mlZ_r-FwSKQza_fw",
@@ -3988,7 +3988,7 @@ Playlist(
       VideoItem(
         id: "duSxyeFFYUQ",
         name: "Umineko: When They Cry - Walkthrough. Part 98: Episode 4 Omake",
-        duration: None,
+        duration: Some(853),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/duSxyeFFYUQ/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLC5rfZM8arn0tuy3Ay-7cR5YbthCw",
@@ -4029,7 +4029,7 @@ Playlist(
       VideoItem(
         id: "lJsgcRx6sd8",
         name: "Umineko no Naku Koro ni - Прохождение. Часть 99: Персонажи",
-        duration: None,
+        duration: Some(2614),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/lJsgcRx6sd8/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLAyk5V2M-U0PQT2wDpQIOlzsnX1Uw",
@@ -4070,7 +4070,7 @@ Playlist(
       VideoItem(
         id: "ba8-9Ef6jms",
         name: "Umineko no Naku Koro ni - Playthrough. Part 100: Episode 5 - End of the Golden Witch",
-        duration: None,
+        duration: Some(2998),
         thumbnail: [
           Thumbnail(
             url: "https://i.ytimg.com/vi/ba8-9Ef6jms/hqdefault.jpg?sqp=-oaymwEiCKgBEF5IWvKriqkDFQgBFQAAAAAYASUAAMhCPQCAokN4AQ==&rs=AOn4CLCpgiFcXaUt3mOyC6zrVQ_48pCAJA",

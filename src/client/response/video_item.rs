@@ -4,7 +4,9 @@ use serde_with::{
 };
 use time::OffsetDateTime;
 
-use super::{ChannelBadge, ContentImage, ContinuationItemRenderer, PhMetadataView, Thumbnails};
+use super::{
+    ChannelBadge, ContentImage, ContinuationItemRenderer, PhMetadataView, Thumbnails,
+};
 use crate::{
     json::JsonNode,
     model::{Channel, ChannelItem, ChannelTag, PlaylistItem, VideoItem, YouTubeItem},
@@ -718,12 +720,8 @@ impl<T> YouTubeListMapper<T> {
                     channel: self.channel.clone(),
                     video_count: tn
                         .overlays
-                        .first()
-                        .and_then(|ol| {
-                            ol.thumbnail_overlay_badge_view_model
-                                .thumbnail_badges
-                                .first()
-                        })
+                        .iter()
+                        .find_map(|ol| ol.badges().first())
                         .and_then(|badge| {
                             util::parse_numeric(&badge.thumbnail_badge_view_model.text).ok()
                         }),
@@ -735,10 +733,17 @@ impl<T> YouTubeListMapper<T> {
                     .content_metadata_view_model
                     .metadata_rows
                     .into_iter();
-                let channel = mdr
-                    .next()
-                    .and_then(|r| r.metadata_parts.into_iter().next())
-                    .and_then(|p| ChannelTag::try_from(p.into_text_component()).ok());
+
+                let has_channel_row = mdr.len() >= 2;
+                let channel = if has_channel_row {
+                    mdr.next()
+                        .and_then(|r| r.metadata_parts.into_iter().next())
+                        .and_then(|p| ChannelTag::try_from(p.into_text_component()).ok())
+                } else {
+                    None
+                };
+                let channel = channel.or_else(|| self.channel.clone());
+
                 let (view_count, publish_date_txt) = mdr
                     .next()
                     .map(|metadata_row| {
@@ -761,17 +766,11 @@ impl<T> YouTubeListMapper<T> {
                 Some(YouTubeItem::Video(VideoItem {
                     id: lockup.content_id,
                     name: md.title,
-                    duration: tn
-                        .overlays
-                        .first()
-                        .and_then(|ol| {
-                            ol.thumbnail_overlay_badge_view_model
-                                .thumbnail_badges
-                                .first()
-                        })
-                        .and_then(|badge| {
+                    duration: tn.overlays.iter().find_map(|ol| {
+                        ol.badges().first().and_then(|badge| {
                             util::parse_video_length(&badge.thumbnail_badge_view_model.text)
-                        }),
+                        })
+                    }),
                     thumbnail: tn.image.into(),
                     channel,
                     publish_date: publish_date_txt.as_deref().and_then(|t| {
