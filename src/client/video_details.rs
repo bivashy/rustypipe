@@ -804,6 +804,28 @@ mod tests {
         }
     }
 
+    /// Recommended videos in the current YouTube layout use lockup items where
+    /// the channel link is only attached to the avatar image (the metadata row
+    /// contains the plain channel name). Make sure the channel is still mapped.
+    #[test]
+    fn map_video_details_recommended_channels() {
+        let json_path = path!(*TESTFILES / "video_details" / "video_details_collaborators.json");
+        let json = JsonDoc::new(std::fs::read_to_string(json_path).unwrap());
+        let map_res =
+            VideoDetailsJson::map_json_response(&json, &MapRespCtx::test("G78AnHpIw5w")).unwrap();
+
+        assert!(!map_res.c.recommended.items.is_empty());
+        for item in &map_res.c.recommended.items {
+            let channel = item
+                .channel
+                .as_ref()
+                .unwrap_or_else(|| panic!("recommended video has no channel: {}", item.name));
+            assert!(!channel.id.is_empty());
+            assert!(!channel.name.is_empty());
+            assert!(!channel.avatar.is_empty(), "no channel avatar");
+        }
+    }
+
     #[test]
     fn map_video_details_not_found() {
         let json_path = path!(*TESTFILES / "video_details" / "video_details_not_found.json");
