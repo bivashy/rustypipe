@@ -6,6 +6,7 @@ pub(crate) mod music_item;
 pub(crate) mod music_playlist;
 pub(crate) mod player;
 pub(crate) mod playlist;
+pub(crate) mod tv;
 pub(crate) mod url_endpoint;
 pub(crate) mod video_details;
 pub(crate) mod video_item;
@@ -634,7 +635,20 @@ pub(crate) struct ImageViewOl {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub(crate) struct ImageViewOverlay {
-    pub thumbnail_overlay_badge_view_model: ThumbnailOverlayBadgeViewModel,
+    pub thumbnail_overlay_badge_view_model: Option<ThumbnailOverlayBadgeViewModel>,
+    pub thumbnail_bottom_overlay_view_model: Option<ThumbnailBottomOverlayViewModel>,
+}
+
+impl ImageViewOverlay {
+    pub(crate) fn badges(&self) -> &[ThumbnailBadges] {
+        if let Some(view_model) = &self.thumbnail_overlay_badge_view_model {
+            &view_model.thumbnail_badges
+        } else if let Some(view_model) = &self.thumbnail_bottom_overlay_view_model {
+            &view_model.badges
+        } else {
+            &[]
+        }
+    }
 }
 
 #[serde_as]
@@ -643,6 +657,14 @@ pub(crate) struct ImageViewOverlay {
 pub(crate) struct ThumbnailOverlayBadgeViewModel {
     #[serde_as(as = "VecSkipError<_>")]
     pub thumbnail_badges: Vec<ThumbnailBadges>,
+}
+
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ThumbnailBottomOverlayViewModel {
+    #[serde_as(as = "VecSkipError<_>")]
+    pub badges: Vec<ThumbnailBadges>,
 }
 
 #[derive(Debug, Deserialize)]

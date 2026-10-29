@@ -51,7 +51,7 @@ impl ChannelTab {
             Self::Videos => "EgZ2aWRlb3PyBgQKAjoA",
             Self::Shorts => "EgZzaG9ydHPyBgUKA5oBAA%3D%3D",
             Self::Live => "EgdzdHJlYW1z8gYECgJ6AA%3D%3D",
-            Self::Playlists => "EglwbGF5bGlzdHMgAQ%3D%3D",
+            Self::Playlists => "EglwbGF5bGlzdHPyBgoKCEIGCgIQaCIA",
             Self::Search => "EgZzZWFyY2jyBgQKAloA",
         }
     }

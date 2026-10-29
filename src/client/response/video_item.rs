@@ -4,10 +4,12 @@ use serde_with::{
 };
 use time::OffsetDateTime;
 
-use super::{ChannelBadge, ContentImage, ContinuationItemRenderer, PhMetadataView, Thumbnails};
+use super::{
+    ChannelBadge, ContentImage, ContinuationItemRenderer, PhMetadataView, Thumbnails,
+};
 use crate::{
     json::JsonNode,
-    model::{Channel, ChannelItem, ChannelTag, PlaylistItem, VideoItem, YouTubeItem},
+    model::{Channel, ChannelItem, ChannelTag, PlaylistItem, Verification, VideoItem, YouTubeItem},
     param::Language,
     serializer::{
         text::{AttributedText, Text, TextComponent},
@@ -204,7 +206,58 @@ pub(crate) struct LockupViewModelMetadata {
 pub(crate) struct LockupViewModelMetadataInner {
     #[serde_as(as = "AttributedText")]
     pub title: String,
+    /// Channel avatar of the lockup
+    ///
+    /// In the current YouTube layout the channel link is not part of the
+    /// metadata rows anymore, but only attached to this avatar image.
+    #[serde(default)]
+    pub image: Option<LockupMetadataImage>,
     pub metadata: PhMetadataView,
+}
+
+/// Channel avatar of a lockup item
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupMetadataImage {
+    pub decorated_avatar_view_model: LockupDecoratedAvatarViewModel,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupDecoratedAvatarViewModel {
+    pub avatar: super::AvatarViewModel,
+    #[serde(default)]
+    pub renderer_context: Option<LockupAvatarRendererContext>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupAvatarRendererContext {
+    pub command_context: Option<super::url_endpoint::OnTapWrap>,
+}
+
+impl LockupMetadataImage {
+    /// Get the channel id and avatar from the lockup image
+    fn channel_info(&self) -> Option<(String, Thumbnails)> {
+        let avatar = self
+            .decorated_avatar_view_model
+            .avatar
+            .avatar_view_model
+            .image
+            .clone();
+        let browse_id = self
+            .decorated_avatar_view_model
+            .renderer_context
+            .as_ref()
+            .and_then(|ctx| ctx.command_context.as_ref())
+            .and_then(|command| match &command.on_tap.innertube_command {
+                super::url_endpoint::NavigationEndpoint::Browse { browse_endpoint, .. } => {
+                    Some(browse_endpoint.browse_id.clone())
+                }
+                _ => None,
+            })?;
+        Some((browse_id, avatar))
+    }
 }
 
 /// Video displayed in a playlist
@@ -718,27 +771,48 @@ impl<T> YouTubeListMapper<T> {
                     channel: self.channel.clone(),
                     video_count: tn
                         .overlays
-                        .first()
-                        .and_then(|ol| {
-                            ol.thumbnail_overlay_badge_view_model
-                                .thumbnail_badges
-                                .first()
-                        })
+                        .iter()
+                        .find_map(|ol| ol.badges().first())
                         .and_then(|badge| {
                             util::parse_numeric(&badge.thumbnail_badge_view_model.text).ok()
                         }),
                 }))
             }
             LockupContentType::LockupContentTypeVideo => {
+                // Channel link may only be attached to the avatar image, the
+                // metadata row then contains the plain channel name.
+                let image_channel = md.image.as_ref().and_then(LockupMetadataImage::channel_info);
+
                 let mut mdr = md
                     .metadata
                     .content_metadata_view_model
                     .metadata_rows
                     .into_iter();
-                let channel = mdr
-                    .next()
-                    .and_then(|r| r.metadata_parts.into_iter().next())
-                    .and_then(|p| ChannelTag::try_from(p.into_text_component()).ok());
+
+                let has_channel_row = mdr.len() >= 2;
+                let channel = if has_channel_row {
+                    mdr.next()
+                        .and_then(|r| r.metadata_parts.into_iter().next())
+                        .and_then(|p| {
+                            let name = p.as_str().to_owned();
+                            match ChannelTag::try_from(p.into_text_component()) {
+                                Ok(channel) => Some(channel),
+                                // New layout without a channel link in the metadata row,
+                                // the channel is only reachable through the avatar image
+                                Err(_) => image_channel.as_ref().map(|(id, avatar)| ChannelTag {
+                                    id: id.clone(),
+                                    name,
+                                    avatar: avatar.clone().into(),
+                                    verification: Verification::None,
+                                    subscriber_count: None,
+                                }),
+                            }
+                        })
+                } else {
+                    None
+                };
+                let channel = channel.or_else(|| self.channel.clone());
+
                 let (view_count, publish_date_txt) = mdr
                     .next()
                     .map(|metadata_row| {
@@ -761,17 +835,11 @@ impl<T> YouTubeListMapper<T> {
                 Some(YouTubeItem::Video(VideoItem {
                     id: lockup.content_id,
                     name: md.title,
-                    duration: tn
-                        .overlays
-                        .first()
-                        .and_then(|ol| {
-                            ol.thumbnail_overlay_badge_view_model
-                                .thumbnail_badges
-                                .first()
-                        })
-                        .and_then(|badge| {
+                    duration: tn.overlays.iter().find_map(|ol| {
+                        ol.badges().first().and_then(|badge| {
                             util::parse_video_length(&badge.thumbnail_badge_view_model.text)
-                        }),
+                        })
+                    }),
                     thumbnail: tn.image.into(),
                     channel,
                     publish_date: publish_date_txt.as_deref().and_then(|t| {

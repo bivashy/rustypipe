@@ -15,6 +15,7 @@ use crate::model::{HistoryItem, TrackItem, VideoItem};
 
 use super::response::{
     music_item::{map_queue_item, MusicListMapper, PlaylistPanelVideo},
+    tv::TvFeedJson,
     YouTubeListItem,
 };
 #[cfg(feature = "userdata")]
@@ -40,7 +41,27 @@ impl RustyPipeQuery {
         visitor_data: Option<&str>,
     ) -> Result<Paginator<T>, Error> {
         let ctoken = ctoken.as_ref();
-        if endpoint.is_music() {
+        if endpoint == ContinuationEndpoint::TvBrowse {
+            let request_body = ytbody!({
+                "continuation": ctoken,
+            });
+
+            let p = self
+                .execute_request_ctx::<TvFeedJson, Paginator<YouTubeItem>, _>(
+                    ClientType::Tv,
+                    "tv_continuation",
+                    ctoken,
+                    endpoint.as_str(),
+                    &request_body,
+                    MapRespOptions {
+                        visitor_data,
+                        ..Default::default()
+                    },
+                )
+                .await?;
+
+            Ok(map_yt_paginator(p, endpoint))
+        } else if endpoint.is_music() {
             let request_body = ytbody!({
                 "continuation": ctoken,
             });
@@ -509,6 +530,12 @@ impl Paginator<HistoryItem<VideoItem>> {
     /// Get the next page from the paginator (or `None` if the paginator is exhausted)
     pub async fn next<Q: AsRef<RustyPipeQuery>>(&self, query: Q) -> Result<Option<Self>, Error> {
         Ok(match &self.ctoken {
+            Some(ctoken) if self.endpoint == ContinuationEndpoint::TvBrowse => Some(
+                query
+                    .as_ref()
+                    .history_continuation_tv(ctoken, self.visitor_data.as_deref())
+                    .await?,
+            ),
             Some(ctoken) => Some(
                 query
                     .as_ref()
