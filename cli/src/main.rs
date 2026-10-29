@@ -236,6 +236,18 @@ enum Commands {
         #[clap(long)]
         search: Option<String>,
     },
+    /// Get your YouTube home feed (recommendations, requires OAuth login)
+    Home {
+        /// Output format
+        #[clap(short, long, value_parser)]
+        format: Option<Format>,
+        /// Pretty-print output
+        #[clap(long)]
+        pretty: bool,
+        /// Limit the number of items to fetch
+        #[clap(short, long, default_value_t = 20)]
+        limit: usize,
+    },
     /// Get the channels you subscribed to
     Subscriptions {
         /// Output format
@@ -1644,6 +1656,15 @@ async fn run() -> anyhow::Result<()> {
                     }
                 }
             }
+        }
+        Commands::Home {
+            format,
+            pretty,
+            limit,
+        } => {
+            let mut feed = rp.query().home_feed().await?;
+            feed.extend_limit(rp.query(), limit).await?;
+            fmt_print_entities(&feed.items, format, pretty, "Home");
         }
         Commands::Subscriptions {
             format,

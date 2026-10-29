@@ -1,0 +1,460 @@
+---
+source: src/client/userdata.rs
+expression: map_res.c
+---
+Paginator(
+  count: None,
+  items: [
+    Playlist(PlaylistItem(
+      id: "PLKykefZYDqLQqiwy0dBPYlDYksKP-FUIb",
+      name: "🥰Songs that I can\'t understand but love 😘",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/p3e_HwISnqs/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAJKO2jlakqnq4IToxStVTLjVxKTw",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: Some(ChannelTag(
+        id: "UChKRqZX42-3OHNAhOAPQMgw",
+        name: "Lisa and Liam Slusser",
+        avatar: [],
+        verification: none,
+        subscriber_count: None,
+      )),
+      video_count: Some(30),
+    )),
+    Playlist(PlaylistItem(
+      id: "LRYRUuZlSBpOHr0mgM2K146_UfgKg4zbVs8P_",
+      name: "2025 Recap",
+      thumbnail: [
+        Thumbnail(
+          url: "https://www.gstatic.com/music/listening_review/YEARLY_REVIEW_2025_V2_60x60.png",
+          width: 60,
+          height: 60,
+        ),
+        Thumbnail(
+          url: "https://www.gstatic.com/music/listening_review/YEARLY_REVIEW_2025_V2_120x120.png",
+          width: 120,
+          height: 120,
+        ),
+        Thumbnail(
+          url: "https://www.gstatic.com/music/listening_review/YEARLY_REVIEW_2025_V2_180x180.png",
+          width: 180,
+          height: 180,
+        ),
+        Thumbnail(
+          url: "https://www.gstatic.com/music/listening_review/YEARLY_REVIEW_2025_V2_226x226.png",
+          width: 226,
+          height: 226,
+        ),
+        Thumbnail(
+          url: "https://www.gstatic.com/music/listening_review/YEARLY_REVIEW_2025_V2_302x302.png",
+          width: 302,
+          height: 302,
+        ),
+        Thumbnail(
+          url: "https://www.gstatic.com/music/listening_review/YEARLY_REVIEW_2025_V2_544x544.png",
+          width: 544,
+          height: 544,
+        ),
+      ],
+      channel: None,
+      video_count: Some(100),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXjiz8JctytJimzoImOIqVhd",
+      name: "Calm music",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/atgjKEgSqSU/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDs894la_JTFD7zNOF6DecxZz17PQ",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(76),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXgCHNLIXGI2UK4eTiVdR92e",
+      name: "Chill happy music",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/0mS1zPM9dhc/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Ad4DgALoAooCDAgAEAEYZSBFKE4wDw==&rs=AOn4CLDVRNyTEzrApgXJ-KKgeBetJs2yYA",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(37),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXhB8tw-YnlQVGGo5GtfeU5I",
+      name: "fun video",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/DLnMHSnDVHA/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4AdoBgAKwAYoCDAgAEAEYZSBXKEowDw==&rs=AOn4CLB2tU8HkY22zqPX7ErlrmrfTu16Og",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(2),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLVfyBBWTXosBc2X7FdAzrdKffZoY1ZzZG",
+      name: "How To Build a City",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/tm6OaV0GPTc/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCYO0I6MW6jxQ8ar1MVJelE3MLxuQ",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: Some(ChannelTag(
+        id: "UCIui-Mt1PmcJYpoBATftj7g",
+        name: "TSMC - Minecraft",
+        avatar: [],
+        verification: none,
+        subscriber_count: None,
+      )),
+      video_count: Some(561),
+    )),
+    Playlist(PlaylistItem(
+      id: "OLAK5uy_lpsDdeS6aHqmyxush4LQXZ6HYqINmFN94",
+      name: "just friends",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i9.ytimg.com/s_p/OLAK5uy_lpsDdeS6aHqmyxush4LQXZ6HYqINmFN94/mqdefault.jpg?sqp=CJT-jdcGir7X7AMICKnxnL0GEAE=&rs=AOn4CLBeUFT4__kExMJ89ox4KGcVGYU3eA&v=1739012265",
+          width: 180,
+          height: 180,
+        ),
+        Thumbnail(
+          url: "https://i9.ytimg.com/s_p/OLAK5uy_lpsDdeS6aHqmyxush4LQXZ6HYqINmFN94/sddefault.jpg?sqp=CJT-jdcGir7X7AMICKnxnL0GEAE=&rs=AOn4CLCSsjV8DbilltHysmJ_w1CNM357JA&v=1739012265",
+          width: 640,
+          height: 640,
+        ),
+        Thumbnail(
+          url: "https://i9.ytimg.com/s_p/OLAK5uy_lpsDdeS6aHqmyxush4LQXZ6HYqINmFN94/maxresdefault.jpg?sqp=CJT-jdcGir7X7AMICKnxnL0GEAE=&rs=AOn4CLBLModhPcy0pJiSKlsHWStNIvLDYw&v=1739012265",
+          width: 1200,
+          height: 1200,
+        ),
+      ],
+      channel: Some(ChannelTag(
+        id: "UCqBGzCfgTSOU24xbenjhLaw",
+        name: "potsu",
+        avatar: [],
+        verification: none,
+        subscriber_count: None,
+      )),
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "LL",
+      name: "Liked videos",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/Cw2Ji31E6oc/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Ab4HgALQBYoCDAgAEAEYZSBlKGUwDw==&rs=AOn4CLC7Y_GSDluqY90L5RUHX2F1c27EMQ",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(5000),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXgj8zdWCLGxKrUcZ8G-KmA-",
+      name: "LO-FI",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/nLEu-rssAg0/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCIQ-8j01Ipjns2mvuZ1S02lgYy7w",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(35),
+    )),
+    Playlist(PlaylistItem(
+      id: "RDM37Sm9s_CWo",
+      name: "Mix - Baccano! Original Soundtrack ~ 13 Abikyoukan no Kurutta Butai",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/M37Sm9s_CWo/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Af4EgALgA4oCDAgAEAEYZSBYKFAwDw==&rs=AOn4CLCXu00wTstzWZc2yxDnLZrQSq7Tdw",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "RDB1mu3tgTQaU",
+      name: "Mix - Elvis Presley - A Little Less Conversation (long version)",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/B1mu3tgTQaU/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Af4EgALgA4oCDAgAEAEYfyAgKBMwDw==&rs=AOn4CLChhw3W-HEJ1OgSudQFZTsCYYc0xg",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "RDqla8dia_5ag",
+      name: "Mix - Gesaffelstein - A Lost Era",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/qla8dia_5ag/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDI4K9Uzm9NRC1qm3JU4-lE9V5FOQ",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "RDX3oO-ycAXlQ",
+      name: "Mix - Gesaffelstein - OPR (remix) [TRAP CINOU]",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/X3oO-ycAXlQ/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYZSBlKGUwDw==&rs=AOn4CLDTBjmVuEolqjLe4_GVCtPG79mwMA",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "RDN3ewWiKKTrY",
+      name: "Mix - Round Table feat. Nino - Groovin Magic",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/N3ewWiKKTrY/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4AdQGgALgA4oCDAgAEAEYciBHKD0wDw==&rs=AOn4CLACQ4Tip9SDiGXcp1DlVxiEPdpxFA",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "RDhy_zXfSwHMc",
+      name: "Mix - Tell Me! - Wonder Girls (sped up)",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/hy_zXfSwHMc/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYZSBRKFowDw==&rs=AOn4CLDdsK0AImVb48QWSKznzOiVZaZ1sA",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "RDqYgOKtpi3Z8",
+      name: "Mix - Tony Renis - Quando Quando Quando (Subtitulada)",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/qYgOKtpi3Z8/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Af4EgALgA4oCDAgAEAEYfyAmKBwwDw==&rs=AOn4CLCS1aXtZ7njPD6FlMzqmlmQsMFctg",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: None,
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXjRVaBQrD6ZjsddmIFvaif3",
+      name: "Music",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/DR0L6DzDBZo/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCrcnFRi1qYEL1aK7-ABuCm5R7Dsw",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(499),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXhDOoYEolwfLEkK-nderFK8",
+      name: "MUUUSIC",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/KZnxv95EZGs/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYfyATKBcwDw==&rs=AOn4CLA9Z_BHu94jIMhvpwTfAND3mgWVYg",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(70),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXgiGa-8zwJqQKfs8AE0GhSf",
+      name: "Olli chill music",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/ISoDhaZO3_k/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB4kLw6OMDGcGCgoOZAdbmbFf1-rQ",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(21),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXiiW1boSaowpeG5H8eLrJTZ",
+      name: "Piano",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/C3Uoi5nZW5o/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAZor54XifoTO4rT9yKMU-21eXYTg",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(44),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLH1TkRvPd30MSh23wIZTar8MUJ1w-XPB2",
+      name: "playlists ordered in no order",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/pDxmxjl0LZY/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB36F3Mp2wQxPvgjrwYtUX6QYa_Ew",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: Some(ChannelTag(
+        id: "UCU5xiNz-QoM7PPi88WD5eyg",
+        name: "mai",
+        avatar: [],
+        verification: none,
+        subscriber_count: None,
+      )),
+      video_count: Some(118),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXjEuVZ0jh9Pd3YANj0hUYVG",
+      name: "queue",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/47dtFZ8CFo8/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBL5juCGk44h2L8WXjFB6ILDD4f0A",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(20),
+    )),
+    Playlist(PlaylistItem(
+      id: "PL7S-cawjHIEsaBxybq7fpsFqhbSGS01eS",
+      name: "shibuya kei/jpop",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/PCpUx2gCuqE/hqdefault.jpg?sqp=-oaymwExCMACELQBSFryq4qpAyMIARUAAIhCGAHwAQH4Ab4CgALwAYoCDAgAEAEYVSBlKCEwDw==&rs=AOn4CLCohhKqti-R4FEpzihq5rCFkDzHPw",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: Some(ChannelTag(
+        id: "UC9oxFWiIKD2rK1W3Df-vZhg",
+        name: "Ryan Gregory",
+        avatar: [],
+        verification: none,
+        subscriber_count: None,
+      )),
+      video_count: Some(120),
+    )),
+    Playlist(PlaylistItem(
+      id: "PL7YFjpxYc8psUkxA5O_rUhdNpgezwfNaK",
+      name: "spongebob squarepants hawaiian flower",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/mIrbV6t_RN8/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD42gGHKSwjHd6qfaTQW7LKubahEw",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: Some(ChannelTag(
+        id: "UCVzqOa3tHwq-Lt3B_mAyuuA",
+        name: "Aaden Oleary",
+        avatar: [],
+        verification: none,
+        subscriber_count: None,
+      )),
+      video_count: Some(51),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXhwKVIimuab4yKQRntp7Q9S",
+      name: "test",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/nT9KAzu1UQQ/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDHrIS3AdzZJ3tKnhVls-P-ucoV3g",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(15),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXgUW7xzctTEwH_T8mzAwU3z",
+      name: "velo",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/jh5Zv6Dcn6k/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD6w7auqUz2hIqH77aCI3tNxszFMQ",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(27),
+    )),
+    Playlist(PlaylistItem(
+      id: "WL",
+      name: "Watch later",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/7PTVX78Se5o/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDoBsmtMpIdI7z8EJzGBV2Im7frOA",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(136),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXi2Var0L_SUFTICg2Oj_awL",
+      name: "Механизмы",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/CcePJ1r0jDM/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAtoogSAcMfWGkOZbw96oRG_0wiJg",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(90),
+    )),
+    Playlist(PlaylistItem(
+      id: "PLTnZPl9AZGXiYthnnWeKJJPDNFWDk6O0t",
+      name: "Ненавидящая плоть",
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/COVu9JKd4ZU/hqdefault.jpg?sqp=-oaymwEXCMACELQBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD1wXaVm2K6jOFDTznA5SSXYHBDMw",
+          width: 320,
+          height: 180,
+        ),
+      ],
+      channel: None,
+      video_count: Some(5),
+    )),
+  ],
+  ctoken: Some("4qmFsgImEhZGRXBsYXlsaXN0X2FnZ3JlZ2F0aW9uGgxDQUo2QUElM0QlM0Q%3D"),
+  endpoint: tv_browse,
+  authenticated: true,
+)

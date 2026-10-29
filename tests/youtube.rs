@@ -2742,6 +2742,13 @@ mod user_data {
     #[tokio::test]
     async fn history(rp: RustyPipe) {
         let videos = rp.query().history().await.unwrap();
+        if rp.query().auth_enabled(ClientType::Desktop) {
+            // Cookie auth: history is grouped by date
+            assert!(videos.items.iter().all(|v| v.playback_date.is_some()));
+        } else {
+            // OAuth (TV client): no playback dates available
+            assert!(videos.items.iter().all(|v| v.playback_date.is_none()));
+        }
         assert_next_history(videos, rp.query(), 100).await;
     }
 
@@ -2764,6 +2771,15 @@ mod user_data {
     async fn subscription_feed(rp: RustyPipe) {
         let videos = rp.query().subscription_feed().await.unwrap();
         assert_next_items(videos, rp.query(), 50).await;
+    }
+
+    /// Requires OAuth login (TV client)
+    #[rstest]
+    #[tokio::test]
+    async fn home_feed(rp: RustyPipe) {
+        let feed = rp.query().home_feed().await.unwrap();
+        assert!(!feed.items.is_empty(), "home feed is empty");
+        assert_next_items(feed, rp.query(), 30).await;
     }
 
     #[rstest]

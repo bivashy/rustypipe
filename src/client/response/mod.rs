@@ -6,6 +6,7 @@ pub(crate) mod music_item;
 pub(crate) mod music_playlist;
 pub(crate) mod player;
 pub(crate) mod playlist;
+pub(crate) mod tv;
 pub(crate) mod url_endpoint;
 pub(crate) mod video_details;
 pub(crate) mod video_item;

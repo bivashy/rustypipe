@@ -65,12 +65,16 @@ pub enum ContinuationEndpoint {
     MusicBrowse,
     MusicSearch,
     MusicNext,
+    /// Browse endpoint of the TV client (home feed)
+    TvBrowse,
 }
 
 impl ContinuationEndpoint {
     pub(crate) fn as_str(self) -> &'static str {
         match self {
-            ContinuationEndpoint::Browse | ContinuationEndpoint::MusicBrowse => "browse",
+            ContinuationEndpoint::Browse
+            | ContinuationEndpoint::MusicBrowse
+            | ContinuationEndpoint::TvBrowse => "browse",
             ContinuationEndpoint::Search | ContinuationEndpoint::MusicSearch => "search",
             ContinuationEndpoint::Next | ContinuationEndpoint::MusicNext => "next",
         }
