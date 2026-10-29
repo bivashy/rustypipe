@@ -1,5 +1,7 @@
 use std::{borrow::Cow, convert::TryFrom, fmt::Debug};
 
+use serde::Deserialize;
+use serde_with::serde_as;
 use time::OffsetDateTime;
 
 use crate::{
@@ -8,10 +10,10 @@ use crate::{
     model::{
         paginator::{ContinuationEndpoint, Paginator},
         richtext::RichText,
-        ChannelId, Playlist, VideoItem,
+        ChannelId, ChannelTag, Playlist, VideoItem,
     },
     request_body::ytbody,
-    serializer::text::{TextComponent, TextComponents},
+    serializer::text::{Text, TextComponent, TextComponents},
     util::{self, dictionary, timeago, TryRemove},
 };
 
@@ -23,11 +25,74 @@ use super::{
 #[derive(Debug)]
 struct PlaylistJson;
 
+#[derive(Debug)]
+struct MixJson;
+
+/// Returns true if the ID belongs to an auto-generated YouTube Mix (`RD…`) which
+/// cannot be fetched from the browse endpoint.
+///
+/// `RDCLAK…` IDs are regular (album) playlists.
+fn is_mix_id(playlist_id: &str) -> bool {
+    playlist_id.starts_with("RD") && !playlist_id.starts_with("RDCLAK")
+}
+
 impl RustyPipeQuery {
     /// Get a YouTube playlist
+    ///
+    /// Auto-generated YouTube Mixes (IDs starting with `RD`, e.g. from the home feed)
+    /// are supported, too. These are infinite playlists, so only the first batch of
+    /// videos is returned (the paginator is exhausted). Mixes have no channel,
+    /// description, thumbnail or update date.
     #[tracing::instrument(skip(self), level = "error")]
     pub async fn playlist<S: AsRef<str> + Debug>(&self, playlist_id: S) -> Result<Playlist, Error> {
         let playlist_id = playlist_id.as_ref();
+        if is_mix_id(playlist_id) {
+            return self.playlist_mix(playlist_id).await;
+        }
+
+        let res = self.playlist_browse(playlist_id).await;
+        match res {
+            // Safety net for mix-like IDs which are not recognized by `is_mix_id`
+            Err(Error::Extraction(ExtractionError::NotFound { ref msg, .. }))
+                if msg.contains("unviewable") =>
+            {
+                self.playlist_mix(playlist_id).await
+            }
+            res => res,
+        }
+    }
+
+    /// Get an auto-generated YouTube Mix from the `next` endpoint
+    async fn playlist_mix(&self, playlist_id: &str) -> Result<Playlist, Error> {
+        // Mixes need a seed video, which is the last 11 characters of the ID
+        // (`RD<video id>` or `RDGMEM<...><video id>`). Without it, YouTube does not
+        // return all mixes.
+        let seed = playlist_id
+            .len()
+            .checked_sub(11)
+            .filter(|n| *n >= 2)
+            .and_then(|n| playlist_id.get(n..));
+        let request_body = match seed {
+            Some(video_id) => ytbody!({
+                "videoId": video_id,
+                "playlistId": playlist_id,
+            }),
+            None => ytbody!({
+                "playlistId": playlist_id,
+            }),
+        };
+
+        self.execute_request::<MixJson, _, _>(
+            ClientType::Desktop,
+            "playlist_mix",
+            playlist_id,
+            "next",
+            &request_body,
+        )
+        .await
+    }
+
+    async fn playlist_browse(&self, playlist_id: &str) -> Result<Playlist, Error> {
         let request_body = ytbody!({
             "browseId": format!("VL{playlist_id}"),
         });
@@ -290,6 +355,106 @@ impl MapJsonResponse<Playlist> for PlaylistJson {
     }
 }
 
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+struct MixPanelVideo {
+    video_id: String,
+    #[serde_as(as = "Text")]
+    title: String,
+    #[serde(default)]
+    thumbnail: response::Thumbnails,
+    #[serde_as(as = "Option<Text>")]
+    length_text: Option<String>,
+    short_byline_text: Option<TextComponent>,
+    long_byline_text: Option<TextComponent>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+enum MixPanelItem {
+    PlaylistPanelVideoRenderer(Box<MixPanelVideo>),
+    #[serde(other)]
+    Unknown,
+}
+
+impl MapJsonResponse<Playlist> for MixJson {
+    fn map_json_response(
+        json: &JsonDoc,
+        ctx: &MapRespCtx<'_>,
+    ) -> Result<MapResult<Playlist>, ExtractionError> {
+        json.with_root(|root| {
+            let playlist = root
+                .query(ytq!(.contents.twoColumnWatchNextResults.playlist.playlist))
+                .ok_or_else(|| ExtractionError::NotFound {
+                    id: ctx.id.to_owned(),
+                    msg: "mix not found".into(),
+                })?;
+            let name = playlist
+                .query(ytq!(.title))
+                .and_then(|t| t.text())
+                .ok_or(ExtractionError::InvalidData("no mix title".into()))?;
+            let (items, mut warnings) = playlist
+                .query(ytq!(.contents))
+                .map(|c| c.deserialize_items_lossy::<MixPanelItem>())
+                .unwrap_or_default();
+
+            let videos = items
+                .into_iter()
+                .filter_map(|item| match item {
+                    MixPanelItem::PlaylistPanelVideoRenderer(v) => Some(VideoItem {
+                        id: v.video_id,
+                        name: v.title,
+                        duration: v.length_text.as_deref().and_then(util::parse_video_length),
+                        thumbnail: v.thumbnail.into(),
+                        channel: v
+                            .long_byline_text
+                            .or(v.short_byline_text)
+                            .and_then(|c| ChannelTag::try_from(c).ok()),
+                        publish_date: None,
+                        publish_date_txt: None,
+                        view_count: None,
+                        is_live: false,
+                        is_short: false,
+                        is_upcoming: false,
+                        short_description: None,
+                    }),
+                    MixPanelItem::Unknown => {
+                        warnings.push("unknown mix item".to_owned());
+                        None
+                    }
+                })
+                .collect::<Vec<_>>();
+            let n_videos = videos.len() as u64;
+
+            Ok(MapResult {
+                c: Playlist {
+                    id: ctx.id.to_owned(),
+                    name,
+                    // Mixes are infinite, only the first batch is returned
+                    videos: Paginator::new_ext(
+                        Some(n_videos),
+                        videos,
+                        None,
+                        ctx.visitor_data.map(str::to_owned),
+                        ContinuationEndpoint::Browse,
+                        ctx.authenticated,
+                    ),
+                    video_count: n_videos,
+                    thumbnail: Vec::new(),
+                    description: None,
+                    channel: None,
+                    last_update: None,
+                    last_update_txt: None,
+                    visitor_data: yt_response_visitor_data(&root)
+                        .or_else(|| ctx.visitor_data.map(str::to_owned)),
+                },
+                warnings,
+            })
+        })
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -324,5 +489,39 @@ mod tests {
             ".last_update" => "[date]",
             ".videos.items[].publish_date" => "[date]",
         });
+    }
+
+    #[test]
+    fn map_playlist_mix() {
+        let json_path = path!(*TESTFILES / "playlist" / "mix.json");
+        let json = JsonDoc::new(fs::read_to_string(json_path).unwrap());
+        let map_res: MapResult<Playlist> =
+            MixJson::map_json_response(&json, &MapRespCtx::test("RDXdiJkzQwKd8")).unwrap();
+
+        assert!(
+            map_res.warnings.is_empty(),
+            "deserialization/mapping warnings: {:?}",
+            map_res.warnings
+        );
+        assert_eq!(map_res.c.videos.items.len(), 25);
+        assert!(map_res.c.name.starts_with("Mix"));
+        assert!(map_res
+            .c
+            .videos
+            .items
+            .iter()
+            .all(|v| v.duration.is_some() && v.channel.as_ref().is_some_and(|c| !c.id.is_empty())));
+        insta::assert_ron_snapshot!(map_res.c, {
+            ".visitor_data" => "[visitor_data]",
+        });
+    }
+
+    #[rstest]
+    #[case("RDXdiJkzQwKd8", true)]
+    #[case("RDGMEMCMFH2exzjBeE_zAHHJOdxgVMmj3S8FL7whI", true)]
+    #[case("RDCLAK5uy_kFQXdnqMaQCVx2wpUM4ZfbsGCDibZtkJk", false)]
+    #[case("PL5dDx681T4bR7ZF1IuWzOv1omlRbE7PiJ", false)]
+    fn mix_id(#[case] id: &str, #[case] expect: bool) {
+        assert_eq!(is_mix_id(id), expect);
     }
 }

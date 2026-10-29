@@ -473,6 +473,20 @@ async fn playlist_not_found(rp: RustyPipe) {
     );
 }
 
+#[rstest]
+#[case::video("RDdQw4w9WgXcQ")]
+#[case::gmem("RDGMEMCMFH2exzjBeE_zAHHJOdxgVMmj3S8FL7whI")]
+#[tokio::test]
+async fn playlist_mix(#[case] id: &str, rp: RustyPipe) {
+    let playlist = rp.query().playlist(id).await.unwrap();
+
+    assert_eq!(playlist.id, id);
+    assert!(playlist.name.starts_with("Mix"), "name: {}", playlist.name);
+    assert!(!playlist.videos.items.is_empty());
+    assert_eq!(playlist.video_count, playlist.videos.items.len() as u64);
+    assert!(playlist.videos.is_exhausted());
+}
+
 //#VIDEO DETAILS
 
 #[rstest]
