@@ -207,9 +207,9 @@ impl RustyPipeQuery {
     /// platform that disable a client or make it less reliable.
     pub fn player_client_order(&self) -> &'static [ClientType] {
         if self.client.inner.botguard.is_some() {
-            &[ClientType::Desktop, ClientType::Ios, ClientType::Tv]
+            &[ClientType::Tv, ClientType::Desktop, ClientType::Ios]
         } else {
-            &[ClientType::Ios, ClientType::Tv]
+            &[ClientType::Tv, ClientType::Ios]
         }
     }
 
@@ -326,7 +326,9 @@ fn map_player_fields(
                             "Premium" => Some(UnavailabilityReason::Premium),
                             "members-only" => Some(UnavailabilityReason::MembersOnly),
                             "country" => Some(UnavailabilityReason::Geoblocked),
-                            "version" | "websites" => Some(UnavailabilityReason::UnsupportedClient),
+                            "version" | "websites" | "reloaded." => {
+                                Some(UnavailabilityReason::UnsupportedClient)
+                            }
                             "bot" => Some(UnavailabilityReason::IpBan),
                             "VPN/Proxy" => Some(UnavailabilityReason::VpnBan),
                             "later." => Some(UnavailabilityReason::TryAgain),
@@ -1033,6 +1035,39 @@ mod tests {
         insta::assert_ron_snapshot!(format!("map_player_data_{name}"), map_res.c, {
             ".valid_until" => "[date]"
         });
+    }
+
+    #[test]
+    fn map_player_tv_reload_switches_client() {
+        let json_path = path!(*TESTFILES / "player" / "tv_reload.json");
+        let json = JsonDoc::new(std::fs::read_to_string(json_path).unwrap());
+        let err = PlayerJson::map_json_response(
+            &json,
+            &MapRespCtx {
+                id: "cNfKjYb6Y5M",
+                lang: Language::En,
+                utc_offset: UtcOffset::UTC,
+                deobf: Some(&DEOBF_DATA),
+                visitor_data: None,
+                client_type: ClientType::Tv,
+                artist: None,
+                authenticated: false,
+                session_po_token: None,
+            },
+        )
+        .unwrap_err();
+
+        assert!(
+            matches!(
+                err,
+                ExtractionError::Unavailable {
+                    reason: UnavailabilityReason::UnsupportedClient,
+                    ..
+                }
+            ),
+            "got {err:?}"
+        );
+        assert!(err.switch_client());
     }
 
     #[test]

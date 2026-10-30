@@ -202,6 +202,7 @@ pub(crate) const DEFAULT_UA: &str =
     "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0";
 pub(crate) const MOBILE_UA: &str = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.135 Mobile Safari/537.36";
 pub(crate) const TV_UA: &str = "Mozilla/5.0 (SMART-TV; Linux; Tizen 5.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.0 NativeTVAds Safari/538.1";
+const TV_PLAYER_UA: &str = "Mozilla/5.0 (SMART-TV; Linux; Tizen 2.4.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/2.4.0 TV Safari/538.1";
 
 pub(crate) const CONSENT_COOKIE: &str = "SOCS=CAISAiAD";
 
@@ -221,6 +222,7 @@ const DESKTOP_CLIENT_VERSION: &str = "2.20241216.05.00";
 const DESKTOP_MUSIC_CLIENT_VERSION: &str = "1.20241216.01.00";
 const MOBILE_CLIENT_VERSION: &str = "2.20241217.07.00";
 const TV_CLIENT_VERSION: &str = "7.20241211.14.00";
+const TV_PLAYER_CLIENT_VERSION: &str = "5.20260707";
 
 // Mobile app client
 const IOS_CLIENT_VERSION: &str = "20.03.02";
@@ -1689,6 +1691,12 @@ impl RustyPipeQuery {
         self
     }
 
+    /// Anonymous TV player requests use the older Samsung TV client, since YouTube
+    /// rejects the current TV client with "The page needs to be reloaded".
+    fn is_tv_player(&self, ctype: ClientType, endpoint: &str) -> bool {
+        ctype == ClientType::Tv && endpoint == "player" && self.opts.auth != Some(true)
+    }
+
     /// Get the user agent for the given client type
     ///
     /// This can be used for additional HTTP requests (e.g. downloading/streaming)
@@ -1772,6 +1780,7 @@ impl RustyPipeQuery {
     async fn get_context(
         &self,
         ctype: ClientType,
+        endpoint: &str,
         localized: bool,
         visitor_data: &str,
     ) -> Value {
@@ -1844,30 +1853,41 @@ impl RustyPipeQuery {
                     "lockedSafetyMode": false,
                 }),
             }),
-            ClientType::Tv => ytbody!({
-                "client": ytbody!({
-                    "clientName": "TVHTML5",
-                    "clientVersion": self.client.get_client_version(ctype).await,
-                    "clientScreen": "WATCH",
-                    "deviceModel": "SmartTV",
-                    "platform": "TV",
-                    "visitorData": visitor_data,
-                    "hl": hl,
-                    "gl": gl,
-                    "timeZone": time_zone,
-                    "utcOffsetMinutes": utc_offset_minutes,
-                }),
-                "request": ytbody!({
-                    "internalExperimentFlags": Vec::<String>::new(),
-                    "useSsl": true,
-                }),
-                "user": ytbody!({
-                    "lockedSafetyMode": false,
-                }),
-                "thirdParty": ytbody!({
-                    "embedUrl": YOUTUBE_TV_URL,
-                }),
-            }),
+            ClientType::Tv => {
+                let tv_player = self.is_tv_player(ctype, endpoint);
+                let client_version = if tv_player {
+                    TV_PLAYER_CLIENT_VERSION.into()
+                } else {
+                    self.client.get_client_version(ctype).await
+                };
+                ytbody!({
+                    "client": ytbody!({
+                        "clientName": "TVHTML5",
+                        "clientVersion": client_version,
+                        "clientScreen": "WATCH",
+                        ? "deviceMake": tv_player.then_some("Samsung"),
+                        "deviceModel": if tv_player { "UKS9800" } else { "SmartTV" },
+                        ? "osName": tv_player.then_some("Tizen"),
+                        ? "osVersion": tv_player.then_some("2.4.0"),
+                        "platform": "TV",
+                        "visitorData": visitor_data,
+                        "hl": hl,
+                        "gl": gl,
+                        "timeZone": time_zone,
+                        "utcOffsetMinutes": utc_offset_minutes,
+                    }),
+                    "request": ytbody!({
+                        "internalExperimentFlags": Vec::<String>::new(),
+                        "useSsl": true,
+                    }),
+                    "user": ytbody!({
+                        "lockedSafetyMode": false,
+                    }),
+                    "thirdParty": ytbody!({
+                        "embedUrl": YOUTUBE_TV_URL,
+                    }),
+                })
+            }
             ClientType::Android => ytbody!({
                 "client": ytbody!({
                     "clientName": "ANDROID",
@@ -1979,7 +1999,11 @@ impl RustyPipeQuery {
                 .header("X-YouTube-Client-Name", "7")
                 .header(
                     "X-YouTube-Client-Version",
-                    self.client.get_client_version(ctype).await.into_owned(),
+                    if self.is_tv_player(ctype, endpoint) {
+                        TV_PLAYER_CLIENT_VERSION.to_owned()
+                    } else {
+                        self.client.get_client_version(ctype).await.into_owned()
+                    },
                 ),
             ClientType::Android => self
                 .client
@@ -2000,9 +2024,14 @@ impl RustyPipeQuery {
                 .header("X-YouTube-Client-Name", "5")
                 .header("X-Goog-Api-Format-Version", "2"),
         };
+        let user_agent = if self.is_tv_player(ctype, endpoint) {
+            TV_PLAYER_UA.into()
+        } else {
+            self.user_agent(ctype)
+        };
         r = r
             .header(header::CONTENT_TYPE, "application/json")
-            .header(header::USER_AGENT, self.user_agent(ctype).as_ref());
+            .header(header::USER_AGENT, user_agent.as_ref());
         if let Some(vdata) = self.opts.visitor_data.as_deref().or(visitor_data) {
             r = r.header("X-Goog-EOM-Visitor-Id", vdata);
         }
@@ -2217,7 +2246,7 @@ impl RustyPipeQuery {
         };
 
         let context = self
-            .get_context(ctype, !ctx_src.unlocalized, &visitor_data)
+            .get_context(ctype, endpoint, !ctx_src.unlocalized, &visitor_data)
             .await;
         let req_body = ytbody!({
             "context": context,
@@ -2358,7 +2387,7 @@ impl RustyPipeQuery {
         };
 
         let context = self
-            .get_context(ctype, !ctx_src.unlocalized, &visitor_data)
+            .get_context(ctype, endpoint, !ctx_src.unlocalized, &visitor_data)
             .await;
         let req_body = ytbody!({
             "context": context,
@@ -2688,7 +2717,7 @@ impl RustyPipeQuery {
             None => self.client.inner.visitor_data_cache.get().await?.into(),
         };
 
-        let context = self.get_context(ctype, true, &visitor_data).await;
+        let context = self.get_context(ctype, endpoint, true, &visitor_data).await;
         let req_body = ytbody!({
             "context": context,
             ..body,
