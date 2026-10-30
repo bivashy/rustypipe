@@ -261,6 +261,8 @@ pub(crate) struct VideoDetails {
     #[serde_as(as = "Option<DisplayFromStr>")]
     pub view_count: Option<u64>,
     pub author: Option<String>,
+    #[serde(default)]
+    pub is_live: bool,
     pub is_live_content: bool,
 }
 

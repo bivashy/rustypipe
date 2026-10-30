@@ -207,9 +207,14 @@ impl RustyPipeQuery {
     /// platform that disable a client or make it less reliable.
     pub fn player_client_order(&self) -> &'static [ClientType] {
         if self.client.inner.botguard.is_some() {
-            &[ClientType::Tv, ClientType::Desktop, ClientType::Ios]
+            &[
+                ClientType::VisionOs,
+                ClientType::Tv,
+                ClientType::Desktop,
+                ClientType::Ios,
+            ]
         } else {
-            &[ClientType::Tv, ClientType::Ios]
+            &[ClientType::VisionOs, ClientType::Tv, ClientType::Ios]
         }
     }
 
@@ -282,8 +287,7 @@ fn deserialize_player_fields(root: &JsonNode<'_>) -> Result<PlayerFields, Extrac
             .transpose()?,
         storyboards: root
             .query(ytq!(.storyboards))
-            .map(|node| node.deserialize())
-            .transpose()?,
+            .and_then(|node| node.deserialize().ok()),
         player_config: root
             .query(ytq!(.playerConfig))
             .and_then(|node| node.deserialize().ok())
@@ -394,6 +398,7 @@ fn map_player_fields(
                 video_details.video_id, ctx.id
             )));
         }
+        let is_live = is_live || video_details.is_live;
         // Sometimes YouTube Desktop does not output any URLs for adaptive streams.
         // Since this is currently rare, it is best to retry the request in this case.
         if !is_live
@@ -407,6 +412,16 @@ fn map_player_fields(
             return Err(ExtractionError::Unavailable {
                 reason: UnavailabilityReason::TryAgain,
                 msg: "no adaptive stream URLs".to_owned(),
+            });
+        }
+
+        if is_live
+            && streaming_data.hls_manifest_url.is_none()
+            && streaming_data.dash_manifest_url.is_none()
+        {
+            return Err(ExtractionError::Unavailable {
+                reason: UnavailabilityReason::UnsupportedClient,
+                msg: "no livestream manifest".to_owned(),
             });
         }
 
@@ -1037,14 +1052,16 @@ mod tests {
         });
     }
 
-    #[test]
-    fn map_player_tv_reload_switches_client() {
-        let json_path = path!(*TESTFILES / "player" / "tv_reload.json");
+    #[rstest]
+    #[case::reload("tv_reload", "cNfKjYb6Y5M")]
+    #[case::live_without_manifest("tv_live", "umLWFz4izTM")]
+    fn map_player_tv_switches_client(#[case] name: &str, #[case] id: &str) {
+        let json_path = path!(*TESTFILES / "player" / format!("{name}.json"));
         let json = JsonDoc::new(std::fs::read_to_string(json_path).unwrap());
         let err = PlayerJson::map_json_response(
             &json,
             &MapRespCtx {
-                id: "cNfKjYb6Y5M",
+                id,
                 lang: Language::En,
                 utc_offset: UtcOffset::UTC,
                 deobf: Some(&DEOBF_DATA),
