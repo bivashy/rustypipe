@@ -92,6 +92,12 @@ pub enum ClientType {
     ///
     /// - no obfuscated stream URLs
     Ios,
+    /// Client used by the Apple Vision Pro app
+    ///
+    /// - no obfuscated stream URLs
+    /// - stream URLs are usable immediately (no pre-roll ad delay)
+    /// - does not support login
+    VisionOs,
 }
 
 impl ClientType {
@@ -103,7 +109,7 @@ impl ClientType {
     }
 
     fn needs_deobf(self) -> bool {
-        !matches!(self, ClientType::Ios)
+        !matches!(self, ClientType::Ios | ClientType::VisionOs)
     }
 
     fn needs_po_token(self) -> bool {
@@ -229,6 +235,11 @@ const IOS_CLIENT_VERSION: &str = "20.03.02";
 const IOS_VERSION: &str = "18_2_1";
 const IOS_VERSION_BUILD: &str = "18.2.1.22C161";
 const IOS_DEVICE_MODEL: &str = "iPhone16,2";
+
+const VISIONOS_CLIENT_VERSION: &str = "1.02";
+const VISIONOS_VERSION: &str = "26.5.23O471";
+const VISIONOS_DEVICE_MODEL: &str = "RealityDevice17,1";
+const VISIONOS_UA: &str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 15_7_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15";
 const ANDROID_CLIENT_VERSION: &str = "19.44.38";
 const ANDROID_VERSION: &str = "11";
 
@@ -1717,6 +1728,7 @@ impl RustyPipeQuery {
                 IOS_CLIENT_VERSION, IOS_DEVICE_MODEL, IOS_VERSION
             )
             .into(),
+            ClientType::VisionOs => VISIONOS_UA.into(),
         }
     }
 
@@ -1924,6 +1936,24 @@ impl RustyPipeQuery {
                     "lockedSafetyMode": false,
                 }),
             }),
+            ClientType::VisionOs => ytbody!({
+                "client": ytbody!({
+                    "clientName": "VISIONOS",
+                    "clientVersion": VISIONOS_CLIENT_VERSION,
+                    "deviceMake": "Apple",
+                    "deviceModel": VISIONOS_DEVICE_MODEL,
+                    "osName": "visionOS",
+                    "osVersion": VISIONOS_VERSION,
+                    "visitorData": visitor_data,
+                    "hl": hl,
+                    "gl": gl,
+                    "timeZone": time_zone,
+                    "utcOffsetMinutes": utc_offset_minutes,
+                }),
+                "user": ytbody!({
+                    "lockedSafetyMode": false,
+                }),
+            }),
         }
     }
 
@@ -2023,6 +2053,15 @@ impl RustyPipeQuery {
                 ))
                 .header("X-YouTube-Client-Name", "5")
                 .header("X-Goog-Api-Format-Version", "2"),
+            ClientType::VisionOs => self
+                .client
+                .inner
+                .http
+                .post(format!(
+                    "{YOUTUBEI_V1_URL}{endpoint}?{DISABLE_PRETTY_PRINT_PARAMETER}"
+                ))
+                .header("X-YouTube-Client-Name", "101")
+                .header("X-YouTube-Client-Version", VISIONOS_CLIENT_VERSION),
         };
         let user_agent = if self.is_tv_player(ctype, endpoint) {
             TV_PLAYER_UA.into()
